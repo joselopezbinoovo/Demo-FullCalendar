@@ -1,0 +1,74 @@
+<form [formGroup]="formEdit" #stopbutton>
+  <div class="field">
+    <label for="name">Title</label>
+    <input
+      type="text"
+      formControlName="title"
+      pInputText
+      id="title"
+      required
+      autofocus
+    />
+  </div>
+  <div class="field">
+    <label for="name">Descripcion</label>
+    <input
+      type="text"
+      formControlName="descripcion"
+      pInputText
+      id="descripcion"
+      required
+      autofocus
+    />
+  </div>
+  <div class="a flex flex-row">
+    <div class="field lg:col-6 md:col-4">
+      <label for="time">Start</label>
+      <p-calendar
+        [(ngModel)]="start"
+        [showTime]="true"
+        [appendTo]="stopbutton"
+        formControlName="start"
+        [showSeconds]="true"
+        inputId="time"
+      ></p-calendar>
+    </div>
+
+    <div class="field lg:col-6 md:col-4">
+      <label for="time">End</label>
+      <p-calendar
+        [(ngModel)]="end"
+        [appendTo]="stopbutton"
+        [showTime]="true"
+        [showSeconds]="true"
+        formControlName="end"
+        inputId="time"
+      ></p-calendar>
+    </div>
+  </div>
+  <div class=" flex flex-row">
+    <div class="field lg:col-6 md:col-4">
+      <h5>Allday</h5>
+      <p-inputSwitch
+        [(ngModel)]="allDay"
+        formControlName="allDay"
+      ></p-inputSwitch>
+    </div>
+    <div class="field lg:col-6 md:col-4 ml-3">
+      <h5>Overlay</h5>
+      <p-colorPicker
+        [(ngModel)]="eventColor"
+        formControlName="eventColor"
+        [appendTo]="stopbutton"
+      ></p-colorPicker>
+    </div>
+  </div>
+  <div class="formgrid grid flex justify-content-center mt-3">
+    <p-button
+      label="Crear"
+      icon="pi pi-check"
+      class="p-button-text"
+      (click)="crear()"
+    ></p-button>
+  </div>
+</form>

@@ -1,0 +1,28 @@
+<form [formGroup]="formEdit" #stopbutton>
+  <div class="field">
+    <label for="name">Title</label>
+    <input
+      type="text"
+      formControlName="title"
+      pInputText
+      id="title"
+      required
+      autofocus
+    />
+    <div class="field lg:col-6 md:col-4 ml-3">
+      <h5>Color del evento</h5>
+      <p-colorPicker
+        formControlName="eventColor"
+        [appendTo]="stopbutton"
+      ></p-colorPicker>
+    </div>
+  </div>
+  <div class="formgrid grid flex justify-content-center mt-3">
+    <p-button
+      label="Crear"
+      icon="pi pi-check"
+      class="p-button-text"
+      (click)="crear()"
+    ></p-button>
+  </div>
+</form>
