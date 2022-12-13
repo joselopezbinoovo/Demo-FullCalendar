@@ -5,7 +5,7 @@ import { INITIAL_EVENTS, createEventId } from './event-utils';
 import { DateTimeFormatter, LocalDateTime, ZonedDateTime } from '@js-joda/core';
 import { Dialog } from 'primeng/dialog';
 import { ModalUpdateComponent } from './modal-update/modal-update.component';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { data ,events} from 'src/data';
 import { CreaterModalComponent } from './creater-modal/creater-modal.component';
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit{
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'resourceTimelineDay, resourceTimelineWeek, resourceTimelineMonth'
+      right: 'resourceTimelineDay resourceTimelineWeek resourceTimelineMonth'
     },
     editable: true,
     resourceAreaHeaderContent: 'Maquinas',
@@ -55,6 +55,7 @@ export class AppComponent implements OnInit{
       }
     }
   };
+  items: MenuItem[]=[];
 
 constructor( private messageService: MessageService,public dialogService: DialogService,
   private confirmationService: ConfirmationService){}

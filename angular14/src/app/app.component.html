@@ -1,11 +1,14 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+      <img src="../assets/binoovo.jpg" height="100" width="100">
+  </ng-template>
+</p-menubar>
+
 
 <div class="demo-app">
   <div class="demo-app-main">
-    <button pButton pRipple type="button" label="Crear Maquina" (click)="addSource()"></button>
-    <full-calendar
-      #calendar
-      [options]="calendarOptions"
-    ></full-calendar>
+    <button class="mb-5" pButton pRipple type="button" label="Crear Maquina" (click)="addSource()"></button>
+    <full-calendar #calendar [options]="calendarOptions" ></full-calendar>
   </div>
 </div>
 
