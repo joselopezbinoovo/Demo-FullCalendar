@@ -28,9 +28,15 @@ export class AppComponent implements OnInit{
   calendarOptions: CalendarOptions = {
     locale:'es',
     headerToolbar: {
-      left: 'prev,next today',
+      left: 'prev,next today myCustomButton',
       center: 'title',
       right: 'resourceTimelineDay resourceTimelineWeek resourceTimelineMonth'
+    },
+    customButtons: {
+      myCustomButton: {
+        text: 'Añadir maquina',
+        click: () => this.addSource()
+      }
     },
     editable: true,
     resourceAreaHeaderContent: 'Maquinas',
