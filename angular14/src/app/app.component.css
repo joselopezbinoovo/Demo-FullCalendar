@@ -1,9 +1,8 @@
-
 :host::ng-deep .p-menubar {
   background-color: rgb(18, 18, 44);
   border-radius: 0px;
-margin: -1px;
-padding: 0;
+  margin: -1px;
+  padding: 0;
 
 }
 
@@ -22,9 +21,11 @@ padding: 0;
   background: #eaf9ff;
   border-right: 1px solid #d3e2e8;
 }
+
 .fc-slot-today {
   background-color: red !important;
 }
+
 .demo-app-sidebar-section {
   padding: 2em;
 }
@@ -34,39 +35,41 @@ padding: 0;
   padding: 3em;
 }
 
-.fc { /* the calendar root */
+.fc {
+  /* the calendar root */
   margin: 50px;
   padding: 0;
-  min-width:300PX;
+  min-width: 300PX;
   width: auto;
   height: 465px;
 }
 
 
-:host::ng-deep .fc .fc-button  {
+:host::ng-deep .fc .fc-button {
   background-color: rgb(18, 18, 44) !important;
-  color:  white;
+  color: white;
   border: 1px solid rgb(18, 18, 44) !important;
-  border-radius: 2px ;
+  border-radius: 2px;
 }
 
-:host::ng-deep .fc .fc-button:hover  {
+:host::ng-deep .fc .fc-button:hover {
   background-color: rgb(252, 36, 71) !important;
-  color:  white;
+  color: white;
   border: 1px solid rgb(252, 36, 71) !important;
-  border-radius: 4px ;
+  border-radius: 4px;
   transition: .2s;
 }
 
 
-
-
-:host::ng-deep .fc .fc-col-header-cell-cushion { /* needs to be same precedence */
-  padding-top: 20px; /* an override! */
-  padding-bottom: 20px; /* an override! */
+:host::ng-deep .fc .fc-col-header-cell-cushion {
+  /* needs to be same precedence */
+  padding-top: 20px;
+  /* an override! */
+  padding-bottom: 20px;
+  /* an override! */
 }
 
 
-:host::ng-deep .fc-h-event{
-height: 35px;
+:host::ng-deep .fc-h-event {
+  height: 35px;
 }

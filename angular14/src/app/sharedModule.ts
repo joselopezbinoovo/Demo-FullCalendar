@@ -16,37 +16,36 @@ import { PasswordModule } from 'primeng/password';
 import { RippleModule } from 'primeng/ripple';
 import { PaginatorModule } from 'primeng/paginator';
 import { BrowserModule } from '@angular/platform-browser';
-import {AccordionModule} from 'primeng/accordion';
-import {AutoCompleteModule} from 'primeng/autocomplete';
-import {ChipsModule} from 'primeng/chips';
-import {TreeModule} from 'primeng/tree';
-import {TreeNode} from 'primeng/api';
-import {MenuModule} from 'primeng/menu';
-import {OverlayPanelModule} from 'primeng/overlaypanel';
-import {BadgeModule} from 'primeng/badge';
+import { AccordionModule } from 'primeng/accordion';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { ChipsModule } from 'primeng/chips';
+import { TreeModule } from 'primeng/tree';
+import { TreeNode } from 'primeng/api';
+import { MenuModule } from 'primeng/menu';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { BadgeModule } from 'primeng/badge';
 import { MenubarModule } from 'primeng/menubar';
-import {CheckboxModule} from 'primeng/checkbox';
-import {CarouselModule} from 'primeng/carousel';
-import {DataViewModule} from 'primeng/dataview';
-import {CardModule} from 'primeng/card';
-import {ToastModule} from 'primeng/toast';
-import {RatingModule} from 'primeng/rating';
-import {InputNumberModule} from 'primeng/inputnumber';
-import {AvatarModule} from 'primeng/avatar';
-import {AvatarGroupModule} from 'primeng/avatargroup';
-import {CalendarModule} from 'primeng/calendar';
-import {SliderModule} from 'primeng/slider';
-import {MultiSelectModule} from 'primeng/multiselect';
-import {ContextMenuModule} from 'primeng/contextmenu';
-import {DialogModule} from 'primeng/dialog';
-import {ProgressBarModule} from 'primeng/progressbar';
-import {ToolbarModule} from 'primeng/toolbar';
-import {RadioButtonModule} from 'primeng/radiobutton';
+import { CheckboxModule } from 'primeng/checkbox';
+import { CarouselModule } from 'primeng/carousel';
+import { DataViewModule } from 'primeng/dataview';
+import { CardModule } from 'primeng/card';
+import { ToastModule } from 'primeng/toast';
+import { RatingModule } from 'primeng/rating';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { CalendarModule } from 'primeng/calendar';
+import { SliderModule } from 'primeng/slider';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { DialogModule } from 'primeng/dialog';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { ToolbarModule } from 'primeng/toolbar';
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import {ToggleButtonModule} from 'primeng/togglebutton';
-import {InputSwitchModule} from 'primeng/inputswitch';
-import {ColorPickerModule} from 'primeng/colorpicker';
-
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
 @NgModule({
   declarations: [],
@@ -94,8 +93,7 @@ import {ColorPickerModule} from 'primeng/colorpicker';
     RadioButtonModule,
     InputTextareaModule,
     ToggleButtonModule,
-    ColorPickerModule
-
+    ColorPickerModule,
   ],
   exports: [
     TableModule,
@@ -141,8 +139,8 @@ import {ColorPickerModule} from 'primeng/colorpicker';
     InputTextareaModule,
     ToggleButtonModule,
     InputSwitchModule,
-    ColorPickerModule
+    ColorPickerModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class SharedModuleModule { }
+export class SharedModuleModule {}

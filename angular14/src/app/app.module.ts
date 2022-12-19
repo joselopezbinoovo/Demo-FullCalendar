@@ -8,8 +8,8 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { AppComponent } from './app.component';
 import resourceTimelinePlugin from '@fullcalendar/resource-timeline';
 import { SharedModuleModule } from './sharedModule';
-import { ModalUpdateComponent } from './modal-update/modal-update.component'
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ModalUpdateComponent } from './modal-update/modal-update.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreaterModalComponent } from './creater-modal/creater-modal.component';
 import { CreateSourceModelComponent } from './create-source-model/create-source-model.component';
 
@@ -26,15 +26,15 @@ FullCalendarModule.registerPlugins([
     AppComponent,
     ModalUpdateComponent,
     CreaterModalComponent,
-    CreateSourceModelComponent
+    CreateSourceModelComponent,
   ],
   imports: [
     BrowserModule,
     FullCalendarModule,
     SharedModuleModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

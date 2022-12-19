@@ -1,45 +1,47 @@
-:host ::ng-deep .p-inputtext{
-  display:flex;
+:host ::ng-deep .p-inputtext {
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 200px;
 }
 
-:host ::ng-deep .p-pInputTextarea{
-  display:flex;
+:host ::ng-deep .p-pInputTextarea {
+  display: flex;
   justify-content: center;
   width: 200px;
-  height:200px
+  height: 200px
 }
 
-:host ::ng-deep .p-button-danger{
+:host ::ng-deep .p-button-danger {
   background-color: rgb(252, 36, 71) !important;
-  color:  white;
+  color: white;
   border: 1px solid rgb(252, 36, 71) !important;
-  border-radius: 4px ;
-  transition: .2s;
-}
-:host ::ng-deep .p-button-update{
-  background-color: rgb(18, 18, 44)!important;
-  color:  rgb(255, 255, 255);
-  border: 1px solid rgb(18, 18, 44) !important;
-  border-radius: 4px ;
-}
-
-:host ::ng-deep .p-button-danger:hover{
-  background-color: rgb(255, 255, 255) !important;
-  color:  rgb(252, 36, 71)!important;
-  border: 1px solid rgb(252, 36, 71) !important;
-  border-radius: 4px ;
+  border-radius: 4px;
   transition: .2s;
 }
 
-:host ::ng-deep .p-button-update:hover{
-  background-color: rgb(255, 255, 255) !important;
-  color:  rgb(18, 18, 44);
+:host ::ng-deep .p-button-update {
+  background-color: rgb(18, 18, 44) !important;
+  color: rgb(255, 255, 255);
   border: 1px solid rgb(18, 18, 44) !important;
-  border-radius: 4px ;
+  border-radius: 4px;
 }
+
+:host ::ng-deep .p-button-danger:hover {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(252, 36, 71) !important;
+  border: 1px solid rgb(252, 36, 71) !important;
+  border-radius: 4px;
+  transition: .2s;
+}
+
+:host ::ng-deep .p-button-update:hover {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(18, 18, 44);
+  border: 1px solid rgb(18, 18, 44) !important;
+  border-radius: 4px;
+}
+
 :host ::ng-deep .p-datepicker {
   top: -120px !important;
   left: 50px !important;
@@ -47,14 +49,14 @@
 }
 
 
-:host ::ng-deep  .p-inputtext .p-colorpicker .p-component .p-colorpicker-overlay {
+:host ::ng-deep .p-inputtext .p-colorpicker .p-component .p-colorpicker-overlay {
   width: 20px !important;
   height: 20px !important;
 
 }
 
 
-:host ::ng-deep .p-colorpicker-overlay-panel{
-  top:156.95px !important;
+:host ::ng-deep .p-colorpicker-overlay-panel {
+  top: 156.95px !important;
   left: 139.8px !important;
 }
