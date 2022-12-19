@@ -1,19 +1,19 @@
 export let data = [
-  { id: 'a', title: 'Envasado Platos', eventColor: 'grey',children: [
-    { id: 'a1', title: 'LINEA ENVASADO 1' , eventColor:'aquamarine' },
-    { id: 'a2', title: 'LINEA ENVASADO 2', eventColor:'aquamarine'},
+  { id: 'a', title: 'Envasado Platos', eventColor: '#357cd2',children: [
+    { id: 'a1', title: 'LINEA ENVASADO 1' , eventColor:'#865fcf' },
+    { id: 'a2', title: 'LINEA ENVASADO 2', eventColor:'#ea7a57'},
   ], },
-  { id: 'b', title: 'Etiquetado', eventColor:'green',children: [
-    { id: 'b1', title: 'LINEA ETIQUETADO 1' ,eventColor:'blue' },
-    { id: 'b2', title: 'LINEA ETIQUETADO 2', eventColor:'blue' },
+  { id: 'b', title: 'Etiquetado', eventColor:'#1aaa55',children: [
+    { id: 'b1', title: 'LINEA ETIQUETADO 1' ,eventColor:'#5978ee' },
+    { id: 'b2', title: 'LINEA ETIQUETADO 2', eventColor:'#00bdae' },
   ], },
-  { id: 'c', title: 'Cocina', eventColor:'orange', children: [
-    { id: 'c1', title: 'COCEDOR' ,eventColor:'purple' },
-    { id: 'c2', title: 'MARMITA 1', eventColor:'purple' },
-    { id: 'c3', title: 'MARMITA S', eventColor:'purple' },
-    { id: 'c4', title: 'ENFRIADOR DE SALSAS', eventColor:'purple' },
-    { id: 'c5', title: 'PICADORA' ,eventColor:'purple' },
-    { id: 'c5', title: 'MARMITA S',eventColor:'purple'  },
+  { id: 'c', title: 'Cocina', eventColor:'#357cd2', children: [
+    { id: 'c1', title: 'COCEDOR' ,eventColor:'#1aaa55' },
+    { id: 'c2', title: 'MARMITA 1', eventColor:'#7fa900' },
+    { id: 'c3', title: 'MARMITA S', eventColor:'#ea7a57' },
+    { id: 'c4', title: 'ENFRIADOR DE SALSAS', eventColor:'#00bdae'},
+    { id: 'c5', title: 'PICADORA' ,eventColor:'#f57f17' },
+    { id: 'c5', title: 'MARMITA S',eventColor: '#df5286'  },
 
   ],},
 ];

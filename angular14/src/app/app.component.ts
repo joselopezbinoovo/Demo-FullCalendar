@@ -38,6 +38,7 @@ export class AppComponent implements OnInit{
         click: () => this.addSource()
       }
     },
+
     editable: true,
     resourceAreaHeaderContent: 'Maquinas',
     resources: data,
