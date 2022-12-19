@@ -13,14 +13,26 @@
 }
 
 
-
-
 :host ::ng-deep .p-datepicker {
   top: -120px !important;
   left: 50px !important;
-
+}
+:host ::ng-deep .p-dropdown {
+  width: 180px;
 }
 
+:host ::ng-deep .p-button-create{
+  background-color: rgb(18, 18, 44)!important;
+  color:  rgb(255, 255, 255);
+  border: 1px solid rgb(18, 18, 44) !important;
+  border-radius: 4px ;
+}
+:host ::ng-deep .p-button-create:hover{
+  background-color: rgb(255, 255, 255) !important;
+  color:  rgb(18, 18, 44);
+  border: 1px solid rgb(18, 18, 44) !important;
+  border-radius: 4px ;
+}
 
 :host ::ng-deep .p-colorpicker .p-component .p-colorpicker-overlay {
   width: 20px !important;

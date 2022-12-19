@@ -7,22 +7,6 @@ padding: 0;
 
 }
 
-.fc.fc-theme-standard .fc-toolbar .fc-button
-
-
-:host::ng-deep .p-button {
-  background-color: rgb(252, 37, 71);
-  color: rgb(255, 255, 255);
-  border: 1px solid rgb(252, 37, 71);
-}
-
-.p-button:hover {
-  background-color: rgb(18, 18, 44);
-  color: #f8f9fa;
-  border: 1px solid rgb(18, 18, 44);
-}
-
-
 .demo-app {
   display: flex;
   height: 100%;
@@ -57,6 +41,22 @@ padding: 0;
   width: auto;
   height: 465px;
 }
+
+:host::ng-deep .fc .fc-button  {
+  background-color: rgb(18, 18, 44) !important;
+  color:  white;
+  border: 1px solid rgb(18, 18, 44) !important;
+  border-radius: 2px ;
+}
+
+:host::ng-deep .fc .fc-button:hover  {
+  background-color: rgb(252, 36, 71) !important;
+  color:  white;
+  border: 1px solid rgb(252, 36, 71) !important;
+  border-radius: 4px ;
+  transition: .2s;
+}
+
 
 
 

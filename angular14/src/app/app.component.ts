@@ -94,10 +94,11 @@ constructor( private messageService: MessageService,public dialogService: Dialog
       if (res) {
 
            data.push({
-            id: createEventId(),
-            title:res.title,
-            eventColor: res.eventColor
-          })
+             title: res.title,
+             eventColor: res.eventColor,
+             id: createEventId(),
+             children: []
+           })
           }
     })
 

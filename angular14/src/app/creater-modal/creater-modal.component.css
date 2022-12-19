@@ -33,3 +33,15 @@
   top:156.95px !important;
   left: 139.8px !important;
 }
+:host ::ng-deep .p-button-create{
+  background-color: rgb(18, 18, 44)!important;
+  color:  rgb(255, 255, 255);
+  border: 1px solid rgb(18, 18, 44) !important;
+  border-radius: 4px ;
+}
+:host ::ng-deep .p-button-create:hover{
+  background-color: rgb(255, 255, 255) !important;
+  color:  rgb(18, 18, 44);
+  border: 1px solid rgb(18, 18, 44) !important;
+  border-radius: 4px ;
+}

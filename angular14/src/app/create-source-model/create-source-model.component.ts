@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 
+
+interface City {
+  name: string,
+  code: string
+}
+
 @Component({
   selector: 'app-create-source-model',
   templateUrl: './create-source-model.component.html',
@@ -12,6 +18,9 @@ export class CreateSourceModelComponent implements OnInit {
 
   title:string=''
   eventColor:string=''
+  cities: City[];
+
+
 
   constructor(public ref: DynamicDialogRef,
     public config: DynamicDialogConfig,) {
@@ -19,9 +28,18 @@ export class CreateSourceModelComponent implements OnInit {
       title: new FormControl(this.title, Validators.required),
       eventColor: new FormControl(this.eventColor, Validators.required),
    })
+
+   this.cities = [
+    {name: 'New York', code: 'NY'},
+    {name: 'Rome', code: 'RM'},
+    {name: 'London', code: 'LDN'},
+    {name: 'Istanbul', code: 'IST'},
+    {name: 'Paris', code: 'PRS'}
+];
    }
 
   ngOnInit(): void {
+
   }
 
 crear(){
