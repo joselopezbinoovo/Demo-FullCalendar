@@ -1,4 +1,4 @@
-export let data = [
+export const data = [
   { id: 'a', title: 'Envasado Platos', eventColor: '#357cd2',children: [
     { id: 'a1', title: 'LINEA ENVASADO 1' , eventColor:'#865fcf' },
     { id: 'a2', title: 'LINEA ENVASADO 2', eventColor:'#ea7a57'},
@@ -19,13 +19,13 @@ export let data = [
 ];
 
 export let events = [
-  { resourceId: 'b1', id:'1',title: '3001392', start: '2022-11-30', end: '2022-12-02',relatedEvents: '2' },
+  { resourceId: 'b1', id:'1',title: '3001392', start: '2022-11-30', end: '2023-01-20-02',relatedEvents: '2' },
   {
     id:'2',
     resourceId: 'c1',
     title: '3001063',
-    start: '2022-12-01T12:00:00+00:00',
-    end: '2022-12-02T06:00:00+00:00',
+    start: '2023-01-20T12:00:00+00:00',
+    end: '2023-01-20T06:00:00+00:00',
     description:'ESPAGUETI CARBONARA',
     relatedEvents: '1',
 
@@ -34,8 +34,8 @@ export let events = [
     id:'3',
     resourceId: 'a1',
     title: '3000806',
-    start: '2022-12-01T07:30:00+00:00',
-    end: '2022-12-01T09:30:00+00:00',
+    start: '2023-01-20T07:30:00+00:00',
+    end: '2023-01-20T09:30:00+00:00',
     description:'ESPAGUETI CARBONARA',
     relatedEvents: '1',
   },
@@ -43,8 +43,8 @@ export let events = [
     id:'4',
     resourceId: 'b2',
     title: '3001436',
-    start: '2022-12-01T10:00:00+00:00',
-    end: '2022-12-01T15:00:00+00:00',
+    start: '2023-01-20T10:00:00+00:00',
+    end: '2023-01-20-T15:00:00+00:00',
     description:'MACCHERONI ALLA BOLOGNESE',
     relatedEvents: '1',
   },
@@ -52,8 +52,8 @@ export let events = [
     id:'5',
     resourceId: 'c3',
     title: '3001391',
-    start: '2022-12-01T09:00:00+00:00',
-    end: '2022-12-01T14:00:00+00:00',
+    start: '2023-01-20T09:00:00+00:00',
+    end: '2023-01-20-T14:00:00+00:00',
     description:'MACCHERONI ALLA BOLOGNESE',
     relatedEvents: '1',
   },

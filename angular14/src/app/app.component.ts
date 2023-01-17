@@ -21,6 +21,7 @@ import { CreaterModalComponent } from './creater-modal/creater-modal.component';
 import { startCase } from 'lodash';
 import { CreateSourceModelComponent } from './create-source-model/create-source-model.component';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,10 +30,8 @@ import { CreateSourceModelComponent } from './create-source-model/create-source-
 })
 export class AppComponent implements OnInit {
   val: String = '';
-
   currentEvents: EventApi[] = [];
   calendarInst?: Calendar;
-
   calendarOptions: CalendarOptions = {
     locale: 'es',
     headerToolbar: {
@@ -46,14 +45,11 @@ export class AppComponent implements OnInit {
         click: () => this.addSource(),
       },
     },
-
     editable: true,
     resourceAreaHeaderContent: 'Maquinas',
-    resources: data,
-    //businessHours: true,
-    events: events,
+    resources:data,
+    events:events,
     initialView: 'resourceTimelineDay',
-
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
     nowIndicator: true,
@@ -81,6 +77,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     const calendarEl = document.getElementById('calendar')!;
     this.calendarInst = new Calendar(calendarEl);
+    console.log(this.calendarOptions  );
+
+
+
+
   }
 
   private get calendar(): Calendar {
@@ -99,13 +100,15 @@ export class AppComponent implements OnInit {
       height: '500px',
     });
     dialog.onClose.subscribe((res: any) => {
+
       if (res) {
-        data.push({
+       this.calendar.addResource({
           title: res.title,
           eventColor: res.eventColor,
           id: createEventId(),
           children: [],
-        });
+        })
+
       }
     });
   }

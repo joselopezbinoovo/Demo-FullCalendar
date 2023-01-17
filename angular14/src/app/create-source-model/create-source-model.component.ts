@@ -29,11 +29,11 @@ export class CreateSourceModelComponent implements OnInit {
     });
 
     this.cities = [
-      { name: 'New York', code: 'NY' },
-      { name: 'Rome', code: 'RM' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Paris', code: 'PRS' },
+      { name: 'Tortilla', code: 'NY' },
+      { name: 'Pasta carbonara', code: 'RM' },
+      { name: 'Lasaña', code: 'LDN' },
+      { name: 'Paella', code: 'IST' },
+      { name: 'Fideua', code: 'PRS' },
     ];
   }
 
