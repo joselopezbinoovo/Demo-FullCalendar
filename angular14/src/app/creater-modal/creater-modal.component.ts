@@ -28,7 +28,6 @@ export class CreaterModalComponent implements OnInit {
       start: new FormControl(this.start, Validators.required),
       end: new FormControl(this.end, Validators.required),
       allDay: new FormControl(this.allDay, Validators.required),
-      eventColor: new FormControl(this.eventColor, Validators.required),
     });
   }
   ngOnInit(): void {}
