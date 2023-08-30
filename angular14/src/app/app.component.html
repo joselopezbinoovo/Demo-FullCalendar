@@ -4,8 +4,42 @@
   </ng-template>
 </p-menubar>
 
-<div class="demo-app">
-  <div class="demo-app-main">
-    <full-calendar [options]="calendarOptions"></full-calendar>
+
+
+<div class="container grid ">
+  <div class="asignarYPlanificar col-12 sm:col-12 md:col-6 lg:col-6 xl:col-6 m-4" id='external'>
+    <h1>Asignar y Planificar</h1>
+    <ul>
+      <li *ngFor="let item of eventNotHaveResourceId" class="fc-event">{{item.title}}</li>
+      <!-- Puedes agregar más elementos aquí -->
+    </ul>
   </div>
+
+  <div class="asignarUser col-12 sm:col-12 md:col-6 lg:col-6 xl:col-6 m-4">
+    <h1>Planificar</h1>
+
+  <div class="card flex justify-content-center  scrollable-content">
+    <p-tree [value]="resources" class="w-full md:w-30rem">
+        <ng-template let-node pTemplate="title">
+            <a [href]="node.data" target="_blank">{{ node.title }}</a>
+        </ng-template>
+        <ng-template let-node pTemplate="default">
+            <b>{{ node.title }}</b>
+        </ng-template>
+    </p-tree>
 </div>
+</div>
+
+</div>
+
+
+<div class="demo-app">
+    <full-calendar class="fc-timeline" [options]="calendarOptions"  (eventDragStop)="eventDragStop($event)"
+    ></full-calendar>
+</div>
+<!-- <div *ngIf="popoverEvent && popoverVisible" class="event-popover" [ngStyle]="{ top: popoverY + 'px', left: popoverX + 'px' }">
+  <div>{{ popoverEvent.title }}</div>
+  <div>Inicio: {{ popoverEvent.start }}</div>
+  <div>Actual: {{ getCurrentTime() }}</div>
+  <div>Fin: {{ popoverEvent.end }}</div>
+</div> -->

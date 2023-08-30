@@ -46,6 +46,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ColorPickerModule } from 'primeng/colorpicker';
+import {SplitterModule} from 'primeng/splitter';
+
 
 @NgModule({
   declarations: [],
@@ -94,6 +96,8 @@ import { ColorPickerModule } from 'primeng/colorpicker';
     InputTextareaModule,
     ToggleButtonModule,
     ColorPickerModule,
+    SplitterModule,
+
   ],
   exports: [
     TableModule,
@@ -140,6 +144,8 @@ import { ColorPickerModule } from 'primeng/colorpicker';
     ToggleButtonModule,
     InputSwitchModule,
     ColorPickerModule,
+    SplitterModule,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

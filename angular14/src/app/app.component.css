@@ -3,24 +3,29 @@
   border-radius: 0px;
   margin: -1px;
   padding: 0;
+}
 
+:host::ng-deep  .p-tree{
+  outline: none;
+  border: none;
 }
 
 .demo-app {
   display: flex;
-  height: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
-  justify-content: center;
-  align-items: center;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 3rem;
 }
 
-.demo-app-sidebar {
-  width: 300px;
-  line-height: 1.5;
-  background: #eaf9ff;
-  border-right: 1px solid #d3e2e8;
-}
+
 
 .fc-slot-today {
   background-color: red !important;
@@ -30,18 +35,67 @@
   padding: 2em;
 }
 
-.demo-app-main {
-  flex-grow: 1;
-  padding: 3em;
+.scrollable-content {
+  max-height: 160px; /* Altura máxima deseada */
+  overflow-y: auto; /* Habilita el desplazamiento vertical */
+  margin-top: -20px;
 }
 
-.fc {
-  /* the calendar root */
-  margin: 50px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.asignarYPlanificar {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+.asignarUser {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  height: 271px;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
   padding: 0;
-  min-width: 300PX;
-  width: auto;
-  height: 465px;
+  overflow-y: scroll;
+  height: 150px;
+}
+
+li {
+  font-size: 18px;
+  margin-bottom: 10px;
+
+}
+.fc-event {
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+}
+
+
+
+.fc {
+  width: 100%;
+  max-height: 510px;
 }
 
 
@@ -70,6 +124,15 @@
 }
 
 
-:host::ng-deep .fc-h-event {
+ :host::ng-deep .fc-h-event {
   height: 35px;
+}
+
+.event-popover {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
 }

@@ -1,25 +1,22 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   CalendarOptions,
   DateSelectArg,
   EventClickArg,
   EventApi,
   Calendar,
-  CalendarApi,
-  CalendarDataManager,
   EventDropArg,
+  EventHoveringArg,
 } from '@fullcalendar/angular';
-import { ResourceInput } from '@fullcalendar/resource-common';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
-import { DateTimeFormatter, LocalDateTime, ZonedDateTime } from '@js-joda/core';
-import { Dialog } from 'primeng/dialog';
+import { ZonedDateTime } from '@js-joda/core';
 import { ModalUpdateComponent } from './modal-update/modal-update.component';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { data, events } from 'src/data';
 import { CreaterModalComponent } from './creater-modal/creater-modal.component';
-import { startCase } from 'lodash';
 import { CreateSourceModelComponent } from './create-source-model/create-source-model.component';
+import { Draggable, DropArg } from '@fullcalendar/interaction';
 
 
 @Component({
@@ -29,6 +26,14 @@ import { CreateSourceModelComponent } from './create-source-model/create-source-
   providers: [MessageService, ConfirmationService, DialogService],
 })
 export class AppComponent implements OnInit {
+
+  eventNotHaveResourceId:any[]=[]
+  popoverEvent: EventApi | null = null;
+  events:any[] = events
+  popoverVisible = false;
+  resources:any[]=[]
+  popoverX = 0;
+  popoverY = 0;
   val: String = '';
   currentEvents: EventApi[] = [];
   calendarInst?: Calendar;
@@ -41,12 +46,12 @@ export class AppComponent implements OnInit {
     },
     customButtons: {
       myCustomButton: {
-        text: 'Añadir maquina',
+        text: 'Añadir Usario',
         click: () => this.addSource(),
       },
     },
     editable: true,
-    resourceAreaHeaderContent: 'Maquinas',
+    resourceAreaHeaderContent: 'Usuarios',
     resources:data,
     events:events,
     initialView: 'resourceTimelineDay',
@@ -60,33 +65,134 @@ export class AppComponent implements OnInit {
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this),
     eventDrop: this.draggingSameTime.bind(this),
+    eventMouseEnter: this.handleEventMouseEnter.bind(this),
+    eventMouseLeave: this.handleEventMouseLeave.bind(this),
+    droppable: true, // this allows things to be dropped onto the calendar
+    drop: this.dropIntoCalendar.bind(this),
     views: {
+
       timeGrid: {
         dayMaxEventRows: 6, // adjust to 6 only for timeGridWeek/timeGridDay
       },
     },
-  };
+    }
   items: MenuItem[] = [];
 
+  nodes!: any[];
+
   constructor(
-    private messageService: MessageService,
     public dialogService: DialogService,
-    private confirmationService: ConfirmationService
   ) {}
 
   ngOnInit(): void {
     const calendarEl = document.getElementById('calendar')!;
+    var containerExternal = document.getElementById('external')!;
+
     this.calendarInst = new Calendar(calendarEl);
-    console.log(this.calendarOptions  );
+    this.eventNotHaveResourceId =  this.events.filter((index:any) => {
+        return index.resourceId === ''
+    })
+    new Draggable(containerExternal, {
+      itemSelector: '.fc-event',
+      eventData: function(eventEl) {
+        return {
+          title: eventEl.innerText
+        };
+      }
+    });
+    this.resources = data
 
 
-
+    this.nodes = [
+      {
+          key: '0',
+          label: 'Introduction',
+          children: [
+              { key: '0-0', label: 'What is Angular', data: 'https://angular.io', type: 'url' },
+              { key: '0-1', label: 'Getting Started', data: 'https://angular.io/guide/setup-local', type: 'url' },
+              { key: '0-2', label: 'Learn and Explore', data: 'https://angular.io/guide/architecture', type: 'url' },
+              { key: '0-3', label: 'Take a Look', data: 'https://angular.io/start', type: 'url' }
+          ]
+      },
+      {
+          key: '1',
+          label: 'Components In-Depth',
+          children: [
+              { key: '1-0', label: 'Component Registration', data: 'https://angular.io/guide/component-interaction', type: 'url' },
+              { key: '1-1', label: 'User Input', data: 'https://angular.io/guide/user-input', type: 'url' },
+              { key: '1-2', label: 'Hooks', data: 'https://angular.io/guide/lifecycle-hooks', type: 'url' },
+              { key: '1-3', label: 'Attribute Directives', data: 'https://angular.io/guide/attribute-directives', type: 'url' }
+          ]
+      }
+  ];
 
   }
 
   private get calendar(): Calendar {
     return this.calendarInst!;
   }
+
+
+  dropIntoCalendar(info:DropArg){
+    info.draggedEl.parentNode?.removeChild(info.draggedEl);
+
+  }
+
+
+/*   drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      return;
+    }
+
+    const draggedItem = event.item.data;
+    const resource: any = {
+      id: 'resource_' + (this.calendarOpcalendartions.resources.length + 1), // Asigna un nuevo ID para el recurso
+      title: draggedItem.title,
+    };
+
+    this.calendar.addResource(resource);
+
+    // Remueve el elemento arrastrado de la lista del contenedor
+    this.eventNotHaveResourceId = this.eventNotHaveResourceId.filter(item => item !== draggedItem);
+  }
+ */
+
+  eventDragStop(model: any) {
+    console.log(model);
+  }
+  handleEventMouseEnter(arg: EventHoveringArg) {
+    const eventApi: EventApi = arg.event;
+    const boundingRect = arg.el.getBoundingClientRect();
+
+    this.popoverEvent = eventApi;
+    this.popoverX = boundingRect.left + window.scrollX;
+    this.popoverY = boundingRect.top + window.scrollY - 10;
+    this.popoverVisible = true;
+  }
+
+  // Función para manejar el evento de salida del ratón
+  handleEventMouseLeave() {
+    this.popoverVisible = false;
+  }
+
+  // Función para obtener la hora actual formateada
+  getCurrentTime() {
+    const now = new Date();
+    return now.toLocaleTimeString();
+  }
+
+/*   loadTippyStyles(): void {
+    const link = document.createElement('link');
+    link.href = 'https://unpkg.com/tippy.js/dist/tippy.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  } */
+/*   addTooltipToEvent(info: any): void {
+    tippy(info.el, {
+      theme: 'tomato',
+      content: `${info.event.title}<br>${info.event.start.toLocaleString()}`,
+    });
+  } */
 
   handleWeekendsToggle() {
     const { calendarOptions } = this;
@@ -95,7 +201,7 @@ export class AppComponent implements OnInit {
 
   addSource() {
     const dialog = this.dialogService.open(CreateSourceModelComponent, {
-      header: 'Crear Maquina',
+      header: 'Crear Actividad',
       width: '500px',
       height: '500px',
     });
@@ -186,7 +292,6 @@ export class AppComponent implements OnInit {
   }
   scrollToNow() {
     const time = ZonedDateTime.now().withFixedOffsetZone().toString();
-    console.debug('Scroll to time', { time });
     this.calendar.scrollToTime(time);
   }
 
@@ -200,7 +305,6 @@ export class AppComponent implements OnInit {
     let relation = this.currentEvents;
     let start = event.event.startStr;
 
-    console.log(start);
 
     let all_day_object = {
       allDay: false,
@@ -208,16 +312,12 @@ export class AppComponent implements OnInit {
 
     let end = event.event.endStr;
 
-    console.log(relation);
 
     let relationShip = relation.map((element) => {
       let relationIds = element._def.extendedProps['relatedEvents'];
-      //console.log(relationIds);
-
       if (relationIds === id) {
         let a = this.currentEvents.filter(
           (element) => element._def.extendedProps['relatedEvents'] === id,
-          console.log(element._def.title)
         );
 
         a.forEach((element) =>

@@ -12,6 +12,7 @@ import { ModalUpdateComponent } from './modal-update/modal-update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreaterModalComponent } from './creater-modal/creater-modal.component';
 import { CreateSourceModelComponent } from './create-source-model/create-source-model.component';
+import 'tippy.js/themes/light.css';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
